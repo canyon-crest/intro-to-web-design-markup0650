@@ -15,11 +15,121 @@ body {
 }
 @media (max-width: 1200px) {
     #container {
+        width: 80%;
+    }
+}
+@media (max-width: 600px) {
+    #container {
         width: 90%;
     }
 }
-@media (max-width: 768px) {
-    #container {
-        width: 80%;
-    }
+
+h1 {
+    text-align: center;
+    padding: 30px 10px;
+    background: linear-gradient(45deg, #f77 0%, #fb8 10%, #fe8 20%, #ff7 25%, #bf7 35%, #7f7 40%, #9fc 55%, #aff 62%, #abf 75%, #67f 85%, #b5f 95%, #d7f 100%);
+    border: 1px hidden #deadbeef;
+    border-radius: 20px;
+}
+
+h2, h3 {
+    padding: 10px 15px;
+    background: white;
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+h3 {
+    padding: 5px 15px !important;
+}
+
+p {
+    text-indent: 2em;
+    line-height: 2.5;
+}
+
+/*********************************\
+*                                 *
+*    FLAG ANIMATION/BACKGROUND    *
+*                                 *
+\*********************************/
+
+/* The container stays fixed in the background */
+.flag-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none; /* Allows clicking through to content */
+}
+
+.flag {
+    position: absolute;
+    font-size: 5rem;
+    user-select: none;
+    opacity: 0.6;
+}
+
+/* [1] slow diagonal */
+.f1 {
+    top: 10%;
+    left: 10%;
+    animation: float-one 20s infinite ease-in-out;
+}
+
+/* [2] springy rotation */
+.f2 {
+    bottom: 20%;
+    right: 15%;
+    animation: float-two 15s infinite linear;
+}
+
+/* [3] vertical loops */
+.f3 {
+    top: 40%;
+    left: 50%;
+    animation: float-three 25s infinite ease-in-out;
+}
+
+/* [4] jittery oscillation */
+.f4 {
+    bottom: 10%;
+    left: 20%;
+    animation: float-four 18s infinite ease-in-out alternate;
+}
+
+.flag img {
+    height: 1em;
+    width: auto;
+    border: 3px solid #abd5;
+}
+
+@keyframes float-one {
+    0%   { transform: translate(0, 0) rotate(0deg); }
+    50%  { transform: translate(60vw, 40vh) rotate(180deg); }
+    100% { transform: translate(0, 0) rotate(360deg); }
+}
+
+@keyframes float-two {
+    0%   { transform: scale(1) translate(0, 0); }
+    33%  { transform: scale(1.2) translate(-30vw, -20vh) rotate(45deg); }
+    66%  { transform: scale(0.8) translate(-10vw, -60vh) rotate(-45deg); }
+    100% { transform: scale(1) translate(0, 0); }
+}
+
+@keyframes float-three {
+    0%   { transform: translateY(0) translateX(0); }
+    25%  { transform: translateY(-30vh) translateX(20vw); }
+    75%  { transform: translateY(30vh) translateX(-20vw); }
+    100% { transform: translateY(0) translateX(0); }
+}
+
+@keyframes float-four {
+    0%   { transform: translate(0, 0) skew(0deg); }
+    50%  { transform: translate(40vw, -50vh) skew(10deg); }
+    100% { transform: translate(-10vw, -20vh) skew(-10deg); }
 }
