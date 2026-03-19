@@ -4,23 +4,39 @@ body {
     overflow-x: hidden;
 }
 
-#container {
-    width: 1600px;
-    margin: 0 auto;
+#image1, #image2 {
+    float: right;
+    margin: 0 15px 15px 0;
+    width: 25%;
 }
-@media (max-width: 1600px) {
-    #container {
-        width: 1200px;
-    }
+
+#image3 {
+    float: left;
+    margin: 0 15px 15px 0;
+    height: 13em;
+}
+
+#container, .flag-background {
+    width: 1200px;
+    margin: 0 auto;
+    left: calc(50% - 600px);
 }
 @media (max-width: 1200px) {
-    #container {
-        width: 80%;
+    #container, .flag-background {
+        width: 1000px;
+        left: calc(50% - 500px);
     }
 }
-@media (max-width: 600px) {
-    #container {
+@media (max-width: 992px) {
+    #container, .flag-background {
+        width: 80%;
+        left: 10%;
+    }
+}
+@media (max-width: 768px) {
+    #container, .flag-background {
         width: 90%;
+        left: 5%;
     }
 }
 
@@ -49,19 +65,23 @@ p {
     line-height: 2.5;
 }
 
+#p1-box {
+    position: relative;
+}
+
 /*********************************\
 *                                 *
 *    FLAG ANIMATION/BACKGROUND    *
 *                                 *
 \*********************************/
 
-/* The container stays fixed in the background */
+/* The container stays fixed relative to the paragraph */
 .flag-background {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     z-index: -1;
     overflow: hidden;
     pointer-events: none; /* Allows clicking through to content */
