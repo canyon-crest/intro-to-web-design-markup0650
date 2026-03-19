@@ -74,6 +74,8 @@ p {
 }
 
 #p1-box {
+    display: flow-root;
+
     position: relative;
 }
 
@@ -93,6 +95,35 @@ p {
 
 .centered-heading {
     text-align: center;
+}
+
+.highlight-on-hover {
+    background: #fda;
+    color: black;
+    border-radius: 5px;
+    transition: background 0.5s, color 0.5s;
+    padding: 0 5px;
+}
+
+.highlight-on-hover:hover {
+    background: black;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+a:link {
+    color: #ff8000;
+}
+a:hover {
+    text-decoration: underline;
+}
+a:active {
+    color: orangered;
+}
+a:visited {
+    color: #f62;
 }
 
 /*********************************\
